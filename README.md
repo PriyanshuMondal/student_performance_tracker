@@ -140,41 +140,6 @@ Open [http://127.0.0.1:5000](http://127.0.0.1:5000) 🎉
 
 ---
 
-## 🚀 Deployment (Render)
-
-1. Push project to GitHub.
-2. On [Render](https://render.com), create a new **Web Service**.
-3. Set:
-
-   * **Environment**: Python 3
-   * **Build Command**:
-
-     ```bash
-     pip install -r requirements.txt
-     ```
-   * **Start Command**:
-
-     ```bash
-     gunicorn 'app:create_app()'
-     ```
-4. Deploy → You’ll get a live `.onrender.com` link.
-5. Optional: Add a `/health` route for quick status check.
-
----
-
-## 📊 Screenshots
-
-| Home                                    | Student List                                   |
-| --------------------------------------- | ---------------------------------------------- |
-| ![Home Page](docs/screenshots/home.png) | ![Student List](docs/screenshots/students.png) |
-
-| Student Detail                                         | Reports                                  |
-| ------------------------------------------------------ | ---------------------------------------- |
-| ![Student Detail](docs/screenshots/student-detail.png) | ![Reports](docs/screenshots/reports.png) |
-
-*(Replace with actual screenshots from your app.)*
-
----
 
 ## ✅ Results
 
