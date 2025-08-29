@@ -1,0 +1,1 @@
+# Student Performance Tracker\n\nRun with `flask --app app run --debug`\n
