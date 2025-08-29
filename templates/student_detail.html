@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card shadow-sm mb-3">
+    <div class="card-body">
+      <h4>{{ student.name }} ({{ student.roll_number }})</h4>
+      <p>Average:
+        {% if student.average() is not none %}
+          <strong>{{ student.average() }}</strong>
+        {% else %}
+          <span class="text-muted">No grades</span>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+  <h3>Grades</h3>
+  {% if grades %}
+    <table class="table table-hover">
+      <thead class="table-light"><tr><th>Subject</th><th>Score</th><th>Action</th></tr></thead>
+      <tbody>
+        {% for g in grades %}
+          <tr>
+            <td>{{ g.subject }}</td>
+            <td>{{ g.score }}</td>
+            <td>
+              <form class="d-inline" action="{{ url_for('delete_grade', student_id=student.id, grade_id=g.id) }}" method="post" onsubmit="return confirm('Delete this grade?');">
+                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-muted">No grades recorded.</p>
+  {% endif %}
+
+  <a class="btn btn-success" href="{{ url_for('add_grades', student_id=student.id) }}">Add Grade</a>
+  <a class="btn btn-secondary" href="{{ url_for('list_students') }}">Back</a>
+{% endblock %}

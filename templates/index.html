@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title">Overview</h2>
+      <p>Total students: <strong>{{ total_students }}</strong></p>
+      {% if class_avg is not none %}
+        <p>Class average: <strong>{{ class_avg }}</strong></p>
+      {% else %}
+        <p class="text-muted">No grades available yet to compute class average.</p>
+      {% endif %}
+      <a class="btn btn-primary" href="{{ url_for('list_students') }}">View Students</a>
+    </div>
+  </div>
+{% endblock %}

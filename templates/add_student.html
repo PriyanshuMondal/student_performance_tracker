@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Add Student</h2>
+  <div class="card p-3 shadow-sm">
+    <form method="post">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" name="name" value="{{ request.form.get('name','') }}" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Roll Number</label>
+        <input class="form-control" name="roll_number" value="{{ request.form.get('roll_number','') }}" required />
+      </div>
+      <button class="btn btn-success" type="submit">Add Student</button>
+    </form>
+  </div>
+{% endblock %}
