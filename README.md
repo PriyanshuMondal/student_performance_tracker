@@ -73,28 +73,6 @@ The system provides functionalities to add students, assign grades, view academi
 
 ---
 
-## 📂 Project Structure
-```
-
-student-performance-tracker/
-│
-├── app.py              # Main Flask app with routes + factory
-├── models.py           # Database models (Student, Grade)
-├── forms.py            # WTForms for input validation
-├── requirements.txt    # Python dependencies
-├── Procfile            # For deployment (Gunicorn entry point)
-├── templates/          # HTML templates (Jinja2)
-│   ├── index.html
-│   ├── list\_students.html
-│   ├── student\_detail.html
-│   ├── add\_student.html
-│   ├── add\_grades.html
-│   └── report.html
-├── static/             # CSS, JS, assets
-└── students.db         # SQLite database (local dev only)
-
-````
-
 ---
 
 ## ⚙️ Implementation Details
